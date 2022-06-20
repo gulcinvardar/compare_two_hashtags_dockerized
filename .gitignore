@@ -1,3 +1,7 @@
+tweet_collector/keys.py
+slack_bot/keys.py
+etl_transformer/keys.py
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
