@@ -6,4 +6,4 @@ COPY . /app
 
 RUN pip3 install --trusted-host pypi.python.org -r requirements.txt
 
-CMD [ "python3", "slack.py"]
+CMD [ "python3", "slack_with_formatting.py"]
