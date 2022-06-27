@@ -1,5 +1,4 @@
 from sqlalchemy import create_engine
-import decimal
 import requests
 import json
 import psycopg2
