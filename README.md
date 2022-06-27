@@ -24,14 +24,13 @@ The contents include
 
 The followings should be written in different keys.py in each folder:
 - tweet collector keys.py:
-    - Bearer_Token = < >
+    - Bearer_Token = *`Bearer_Token`*
         1. This should be obtained from Tweeter developer 
-        2. Step 1: Get a Twitter Bearer Token
-        3. Register your application on apps.twitter.com.
-        4. Navigate to the Twitter App dashboard and open the Twitter App for which you would like to generate access tokens.
-        5. Navigate to the “keys and tokens” page.
-        6. You’ll find the API keys, user Access Tokens, and Bearer Token on this page.
-        7. Write down the Bearer Token in the keys.py.
+        2. Register your application on apps.twitter.com.
+        3. Navigate to the Twitter App dashboard and open the Twitter App for which you would like to generate access tokens.
+        4. Navigate to the “keys and tokens” page.
+        5. You’ll find the API keys, user Access Tokens, and Bearer Token on this page.
+        6. Write down the Bearer Token in the keys.py.
 
 - etl transformer keys.py:
     - postgres = 'postgresql://postgres:12345@postgresdb:5432'
@@ -40,8 +39,7 @@ The followings should be written in different keys.py in each folder:
     - postgres = 'postgresql://user:password@host:5432'
 
 - slack bot keys.py:
-    - webhook_url = <>
-    - postgres = 'postgresql://postgres:12345@postgresdb:5432'
+    - webhook_url = *`webhook_url`*
 
         1. Get your webhook_url from slack
         2. Go to [your_app](https://api.slack.com/apps)
@@ -52,4 +50,6 @@ The followings should be written in different keys.py in each folder:
         7. Click on 'Add New Webhook to Workspace'
         8. Select the channel you want to post your app. 
         9. Copy the Webohook URL into the keys.py
+
+    - postgres = 'postgresql://postgres:12345@postgresdb:5432'
 
