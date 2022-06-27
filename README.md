@@ -53,3 +53,39 @@ The followings should be written in different keys.py in each folder:
 
     - postgres = 'postgresql://postgres:12345@postgresdb:5432'
 
+
+## Usage 
+
+### General
+Go to the [Docker_Documentation](https://docs.docker.com/), find the installation instructions and install Docker CE.
+In your terminal, go to the folder that contains docker-compose.yml file.
+Run: `docker compose up --build`
+
+### Tweet Collector
+
+Connects to MongoDB and tweeter API. 
+Creates two separate databases with the tweets extracted from #Ukraine and #Rojava. 
+After 60 minutes, the tweets are deleted from the databases and new tweets are inserted.
+
+### ETL transformer
+
+Connects to MongoDB and PostgreSQL. 
+Cleans the tweets from punctuation, links, and 'breaking news', and performs sentiment analysis using vaderSentiment.
+Creates a database in PostgreSQL with the original tweet, sentiment analysis compound score, date of tweet, and number of likes.
+After 60 minutes, the database is renewed.
+*It is important to put a time sleep of ~10 s. 
+MongoDB requires time to initialize, which might lead to an empty database in PostgreSQL if not waited.*
+
+### Slack bot
+
+Connects to PostgreSQL and Slack-Bot. 
+The sentiment of the tweet is evaluated as exclamation ranging from pretty good to quite negative.
+Randomly selects the tweets from either #Ukraine or #Rojava PostreSQL databases. 
+The tweet is posted with an image representing either Ukraine or Rojava based on the tweet.
+For formatting the slack post, please refer to [slack-block-kit-builder](https://app.slack.com/block-kit-builder/T036UAB10E5)
+
+## License
+
+(c) 2022 Gülçin Vardar
+
+Distributed under the conditions of the MIT License. See LICENSE for details.
